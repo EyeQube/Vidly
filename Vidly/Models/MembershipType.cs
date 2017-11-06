@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
 {
@@ -12,6 +13,8 @@ namespace Vidly.Models
         public byte DurationInMonths { get; set; }
         public byte DiscountRate { get; set; }
 
-
+        [Required]
+        [StringLength(40)]
+        public string MembershipTypeName { get; set; }
     }
 }
