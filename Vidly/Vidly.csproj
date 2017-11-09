@@ -225,10 +225,6 @@
     <Compile Include="Migrations\201711061230584_AddMembershipName.Designer.cs">
       <DependentUpon>201711061230584_AddMembershipName.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711061244136_AddedCustomerclass.cs" />
-    <Compile Include="Migrations\201711061244136_AddedCustomerclass.Designer.cs">
-      <DependentUpon>201711061244136_AddedCustomerclass.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201711061409580_AddBirthdateToCustomer.cs" />
     <Compile Include="Migrations\201711061409580_AddBirthdateToCustomer.Designer.cs">
       <DependentUpon>201711061409580_AddBirthdateToCustomer.cs</DependentUpon>
@@ -236,10 +232,6 @@
     <Compile Include="Migrations\201711071329305_PopulateBirthdate.cs" />
     <Compile Include="Migrations\201711071329305_PopulateBirthdate.Designer.cs">
       <DependentUpon>201711071329305_PopulateBirthdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711071349355_addedNewBirthDates.cs" />
-    <Compile Include="Migrations\201711071349355_addedNewBirthDates.Designer.cs">
-      <DependentUpon>201711071349355_addedNewBirthDates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201711071404552_AddedAnotationToCustomer.cs" />
     <Compile Include="Migrations\201711071404552_AddedAnotationToCustomer.Designer.cs">
@@ -360,17 +352,11 @@
     <EmbeddedResource Include="Migrations\201711061230584_AddMembershipName.resx">
       <DependentUpon>201711061230584_AddMembershipName.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711061244136_AddedCustomerclass.resx">
-      <DependentUpon>201711061244136_AddedCustomerclass.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711061409580_AddBirthdateToCustomer.resx">
       <DependentUpon>201711061409580_AddBirthdateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071329305_PopulateBirthdate.resx">
       <DependentUpon>201711071329305_PopulateBirthdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711071349355_addedNewBirthDates.resx">
-      <DependentUpon>201711071349355_addedNewBirthDates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201711071404552_AddedAnotationToCustomer.resx">
       <DependentUpon>201711071404552_AddedAnotationToCustomer.cs</DependentUpon>

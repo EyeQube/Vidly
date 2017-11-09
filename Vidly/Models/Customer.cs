@@ -16,9 +16,10 @@ namespace Vidly.Models
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
-        public MembershipType MembershipType { get; set; }
+        public virtual MembershipType MembershipType { get; set; }   //Lazy loading by adding "Virtual"
         public byte MembershipTypeId { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime? Birthdate { get; set; }
 
