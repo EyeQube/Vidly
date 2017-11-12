@@ -2,8 +2,45 @@
 @model Vidly.Models.Movie
 
 @{
-    ViewBag.Title = Model.Name;
+    ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@Model.Name</h2>
+<ul class="table table-bordered table-hover">
+    
+      <li>Genre: @Model.Genre</li>
+      <li>Release Date: @Model.ReleaseDate.ToString("dddd, MMMM dd, yyyy")</li>
+      <li>Date Added: @Model.DateAdded.ToString("dddd, MMMM dd, yyyy")</li>
+      <li>Number in Stock: @Model.NumberInStock</li>
+</ul>
+
+
+
+
+@*
+// //////////////////////////////////////////////////////////////////
+@model Vidly.Models.Customer
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model.Name</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Membership Type</th>
+            <th>Birthdate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.MembershipType.MembershipTypeName</td>
+            <td>@Model.Birthdate.Value.ToShortDateString()</td>
+        </tr>
+    </tbody>
+</table> *@

@@ -25,7 +25,7 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); // Eagerloading by adding  " Include(c => c.MembershipType) "  in between.
+            var customers = _context.Customers.ToList(); // Eagerloading by adding  " Include(c => c.MembershipType) "  in between.
 
             return View(customers);
         }

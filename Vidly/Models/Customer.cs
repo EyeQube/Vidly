@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,11 +18,15 @@ namespace Vidly.Models
 
         public bool IsSubscribedToNewsLetter { get; set; }
         public virtual MembershipType MembershipType { get; set; }   //Lazy loading by adding "Virtual"
-        public byte MembershipTypeId { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy/MM/dd}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? Birthdate { get; set; }
+
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public byte MembershipTypeId { get; set; }
+
+        
 
 
     }
