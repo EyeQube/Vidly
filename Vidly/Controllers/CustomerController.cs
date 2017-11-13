@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
+using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
@@ -23,12 +24,25 @@ namespace Vidly.Controllers
         // ////////////////////////////////////////////////////////////////////
 
 
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+                
+            };
+
+            return View(viewModel);
+        }
+
         public ViewResult Index()
         {
             var customers = _context.Customers.ToList(); // Eagerloading by adding  " Include(c => c.MembershipType) "  in between.
 
             return View(customers);
         }
+
 
         public ActionResult Details(int id)
         {
@@ -38,6 +52,8 @@ namespace Vidly.Controllers
 
             return View(customer);
         }
+
+        
 
         
     }
