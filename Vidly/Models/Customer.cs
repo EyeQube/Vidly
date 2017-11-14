@@ -18,7 +18,7 @@ namespace Vidly.Models
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-        public virtual MembershipType MembershipType { get; set; }   //Lazy loading by adding "Virtual"
+        public MembershipType MembershipType { get; set; }   //Lazy loading by adding "Virtual"
 
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
