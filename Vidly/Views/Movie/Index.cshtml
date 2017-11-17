@@ -12,15 +12,20 @@
 *@
 
 @{
-    ViewBag.Title = "Movies";
+    ViewBag.Title = "Movie";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Movies</h2>
-@if (!Model.Any())
-{
+
+    <p>
+        <a href="/Movie/" type="button" class="btn btn-primary"> New Movie </a>
+    </p>
+
+     @if (!Model.Any())
+     {
     <p>We don't have any Movies yet.</p>
-}
+     }
 else
 {
     <table class="table table-bordered table-hover">
@@ -42,7 +47,7 @@ else
     </table>
 }
 
-
+ 
 
 @* @model IEnumerable<Vidly.Models.Movie>
 
