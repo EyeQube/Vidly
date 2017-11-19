@@ -3,6 +3,8 @@ using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
+using System;
 
 namespace Vidly.Controllers 
 {
@@ -23,14 +25,14 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(c => c.Genre).ToList();
 
             return View(movies);
         }
 
         public ActionResult Details(int id)
         {
-            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
                 return HttpNotFound();
@@ -38,22 +40,35 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
+
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = genres
+
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+
         [HttpPost]
         public ActionResult Save(Movie movie)  
         {
+            var newMovie = _context.Movies.FirstOrDefault(c => c.Name == movie.Name);
 
-            if(movie.Id == 0)
+            if (newMovie == null)
             {
                 _context.Movies.Add(movie);
             }
             else
             {
-                var dbMovie = _context.Movies.Single(c => c.Id == movie.Id);
-                dbMovie.Id = movie.Id;
-                dbMovie.Name = movie.Name;
-                dbMovie.ReleaseDate = movie.ReleaseDate;
-                dbMovie.Genre = movie.Genre;
-                dbMovie.NumberInStock += 1;
+                newMovie.NumberInStock += movie.NumberInStock;
+                DateTime Time = DateTime.Now;
+                newMovie.DateAdded = Time;
             }
 
             _context.SaveChanges();
@@ -61,18 +76,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Movie");
         }
         /// //////////////////////////////////////////////////////////////
-         public ActionResult Edit(int Id)
-        {
-            var movie = _context.Movies.SingleOrDefault(c => c.Id == Id);
-
-            if( movie == null)
-            {
-                return HttpNotFound();
-            }
-
-            return View("MovieForm", movie);
-
-        } 
+        
 
       /*    // GET: Movies/Random
         public ActionResult Random()
