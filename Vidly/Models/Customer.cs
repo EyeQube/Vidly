@@ -12,7 +12,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -21,6 +21,7 @@ namespace Vidly.Models
         public MembershipType MembershipType { get; set; }   //Lazy loading by adding "Virtual"
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? Birthdate { get; set; }
