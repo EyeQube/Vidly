@@ -18,6 +18,8 @@ namespace Vidly.Models
         }
 
         public int Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         public Genre Genre { get; set; }
@@ -27,12 +29,16 @@ namespace Vidly.Models
         [Required]
         public byte GenreId { get; set; }
 
+
         [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
+
+        [Required]
+        [Range(1,20)]
         [Display(Name = "Add/update numbers in stock")]
         public int NumberInStock { get; set; }
       
