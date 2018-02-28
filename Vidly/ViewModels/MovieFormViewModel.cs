@@ -9,10 +9,13 @@ namespace Vidly.ViewModels
 {
     public class MovieFormViewModel
     {
-        //public Movie Movie { get; set; }
+        public Movie Movie { get; set; }
+
+        public IEnumerable<Genre> Genres { get; set; }
 
 
-        public int? Id { get; set; }
+
+      /*public int? Id { get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -52,7 +55,7 @@ namespace Vidly.ViewModels
             GenreId = movie.GenreId;
         }
 
-        public IEnumerable<Genre> Genres { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }  */
         
     }
 }

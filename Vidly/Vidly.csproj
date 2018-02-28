@@ -211,50 +211,23 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711181511059_InitialModel.cs" />
-    <Compile Include="Migrations\201711181511059_InitialModel.Designer.cs">
-      <DependentUpon>201711181511059_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201802271633207_initmodel.cs" />
+    <Compile Include="Migrations\201802271633207_initmodel.Designer.cs">
+      <DependentUpon>201802271633207_initmodel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711181513089_AddGenre.cs" />
-    <Compile Include="Migrations\201711181513089_AddGenre.Designer.cs">
-      <DependentUpon>201711181513089_AddGenre.cs</DependentUpon>
+    <Compile Include="Migrations\201802271633481_addMembershiptypes.cs" />
+    <Compile Include="Migrations\201802271633481_addMembershiptypes.Designer.cs">
+      <DependentUpon>201802271633481_addMembershiptypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711181601403_AddMembershiptypes.cs" />
-    <Compile Include="Migrations\201711181601403_AddMembershiptypes.Designer.cs">
-      <DependentUpon>201711181601403_AddMembershiptypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711181746099_ChangedDatePropertyInMovie.cs" />
-    <Compile Include="Migrations\201711181746099_ChangedDatePropertyInMovie.Designer.cs">
-      <DependentUpon>201711181746099_ChangedDatePropertyInMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711190012376_ChangedTimePropertyInMovie_And_Added_ApplicationDbContext_To_MovieFormViewmodel.cs" />
-    <Compile Include="Migrations\201711190012376_ChangedTimePropertyInMovie_And_Added_ApplicationDbContext_To_MovieFormViewmodel.Designer.cs">
-      <DependentUpon>201711190012376_ChangedTimePropertyInMovie_And_Added_ApplicationDbContext_To_MovieFormViewmodel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711190026360_Added_ApplicationDbContext_To_MovieModel.cs" />
-    <Compile Include="Migrations\201711190026360_Added_ApplicationDbContext_To_MovieModel.Designer.cs">
-      <DependentUpon>201711190026360_Added_ApplicationDbContext_To_MovieModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711190111253_Added_ApplicationDbContext_To_MovieFormModel.cs" />
-    <Compile Include="Migrations\201711190111253_Added_ApplicationDbContext_To_MovieFormModel.Designer.cs">
-      <DependentUpon>201711190111253_Added_ApplicationDbContext_To_MovieFormModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711190122391_Added_IEnumerableMovies_To_MovieFormModel.cs" />
-    <Compile Include="Migrations\201711190122391_Added_IEnumerableMovies_To_MovieFormModel.Designer.cs">
-      <DependentUpon>201711190122391_Added_IEnumerableMovies_To_MovieFormModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711191213504_ChangedReleaseDatePropertyInMovie.cs" />
-    <Compile Include="Migrations\201711191213504_ChangedReleaseDatePropertyInMovie.Designer.cs">
-      <DependentUpon>201711191213504_ChangedReleaseDatePropertyInMovie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712101932239_AddValidations.cs" />
-    <Compile Include="Migrations\201712101932239_AddValidations.Designer.cs">
-      <DependentUpon>201712101932239_AddValidations.cs</DependentUpon>
+    <Compile Include="Migrations\201802271635343_addGenres.cs" />
+    <Compile Include="Migrations\201802271635343_addGenres.Designer.cs">
+      <DependentUpon>201802271635343_addGenres.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -531,35 +504,14 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711181511059_InitialModel.resx">
-      <DependentUpon>201711181511059_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802271633207_initmodel.resx">
+      <DependentUpon>201802271633207_initmodel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711181513089_AddGenre.resx">
-      <DependentUpon>201711181513089_AddGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802271633481_addMembershiptypes.resx">
+      <DependentUpon>201802271633481_addMembershiptypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711181601403_AddMembershiptypes.resx">
-      <DependentUpon>201711181601403_AddMembershiptypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711181746099_ChangedDatePropertyInMovie.resx">
-      <DependentUpon>201711181746099_ChangedDatePropertyInMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711190012376_ChangedTimePropertyInMovie_And_Added_ApplicationDbContext_To_MovieFormViewmodel.resx">
-      <DependentUpon>201711190012376_ChangedTimePropertyInMovie_And_Added_ApplicationDbContext_To_MovieFormViewmodel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711190026360_Added_ApplicationDbContext_To_MovieModel.resx">
-      <DependentUpon>201711190026360_Added_ApplicationDbContext_To_MovieModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711190111253_Added_ApplicationDbContext_To_MovieFormModel.resx">
-      <DependentUpon>201711190111253_Added_ApplicationDbContext_To_MovieFormModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711190122391_Added_IEnumerableMovies_To_MovieFormModel.resx">
-      <DependentUpon>201711190122391_Added_IEnumerableMovies_To_MovieFormModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711191213504_ChangedReleaseDatePropertyInMovie.resx">
-      <DependentUpon>201711191213504_ChangedReleaseDatePropertyInMovie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712101932239_AddValidations.resx">
-      <DependentUpon>201712101932239_AddValidations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802271635343_addGenres.resx">
+      <DependentUpon>201802271635343_addGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

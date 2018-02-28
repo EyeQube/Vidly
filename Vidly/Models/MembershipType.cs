@@ -15,7 +15,7 @@ namespace Vidly.Models
 
         [Required]
         [StringLength(40)]
-        public string MembershipTypeName { get; set; }
+        public string Name { get; set; }
 
 
         public static readonly byte Unknown = 0;

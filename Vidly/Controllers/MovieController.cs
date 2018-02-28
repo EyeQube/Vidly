@@ -25,9 +25,10 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();
+            // var movies = _context.Movies.Include(c => c.Genre).ToList();
 
-            return View(movies);
+            //return View(movies);
+            return View();
         }
 
         public ActionResult Details(int id)
@@ -44,14 +45,20 @@ namespace Vidly.Controllers
         public ActionResult Edit(int id)
         {
 
-            var movie = _context.Movies.Single(c => c.Id == id);
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
             {
                 return HttpNotFound();
             }
-            
-                MovieFormViewModel viewModel = new MovieFormViewModel(movie)
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+                /*MovieFormViewModel viewModel = new MovieFormViewModel(movie)
                 {
                     Id = movie.Id,
                     Name = movie.Name,
@@ -59,7 +66,7 @@ namespace Vidly.Controllers
                     NumberInStock = movie.NumberInStock,
                     GenreId = movie.GenreId,
                     Genres = _context.Genres.ToList()
-                };
+                }; */
             
 
             return View("MovieForm", viewModel);
@@ -72,6 +79,7 @@ namespace Vidly.Controllers
 
             var viewModel = new MovieFormViewModel
             {
+                Movie = new Movie(),
                 Genres = genres
 
             };
@@ -88,8 +96,9 @@ namespace Vidly.Controllers
 
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieFormViewModel(movie)
+                var viewModel = new MovieFormViewModel
                 {
+                    Movie = movie,
                     Genres = _context.Genres.ToList()
                 };
 

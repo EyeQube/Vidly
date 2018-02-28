@@ -14,5 +14,5 @@ namespace Vidly.Models
         [Required]
         public string Genres { get; set; }   
 
-    }
+    }   
 }

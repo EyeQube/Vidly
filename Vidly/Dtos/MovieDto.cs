@@ -23,9 +23,9 @@ namespace Vidly.Dtos
         [Required]
         public string Name { get; set; }
 
-        public Genre Genre { get; set; }
+        public GenreDto Genre { get; set; }
 
-
+            
         [Required]
         public byte GenreId { get; set; }
 
@@ -41,3 +41,4 @@ namespace Vidly.Dtos
 
     }
 }
+
