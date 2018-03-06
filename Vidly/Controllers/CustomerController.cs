@@ -7,6 +7,7 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
@@ -23,7 +24,7 @@ namespace Vidly.Controllers
 
         // ////////////////////////////////////////////////////////////////////
 
-
+        [AllowAnonymous]
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -73,7 +74,7 @@ namespace Vidly.Controllers
         }
 
 
-
+        [AllowAnonymous]
         public ViewResult Index()
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); // Eagerloading by adding  " Include(c => c.MembershipType) "  in between.

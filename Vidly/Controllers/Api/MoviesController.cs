@@ -11,6 +11,7 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : ApiController
     {
         public ApplicationDbContext _context;
@@ -21,6 +22,7 @@ namespace Vidly.Controllers.Api
         }
 
         //get moviesList  api/Movies
+        [AllowAnonymous]
         public IHttpActionResult GetMovies()
         {
             var movieDtos = _context.Movies
@@ -29,9 +31,10 @@ namespace Vidly.Controllers.Api
                 .Select(Mapper.Map<Movie, MovieDto>);
 
             return Ok(movieDtos);
-        }  
+        }
 
         //get movie    api/Movies/1
+        [AllowAnonymous]
         public IHttpActionResult GetMovie(int id)
         {
 

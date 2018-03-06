@@ -11,6 +11,7 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomersController : ApiController
     {
 
@@ -46,6 +47,7 @@ namespace Vidly.Controllers.Api
 
         // POST /api/customers
         [HttpPost]
+        [AllowAnonymous]
         public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)

@@ -8,6 +8,7 @@ using System;
 
 namespace Vidly.Controllers 
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MovieController : Controller
     {
 
@@ -23,6 +24,7 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        [AllowAnonymous]
         public ViewResult Index()
         {
             // var movies = _context.Movies.Include(c => c.Genre).ToList();
@@ -35,6 +37,7 @@ namespace Vidly.Controllers
                 return View("ReadOnlyList");
         }
 
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
@@ -76,7 +79,7 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
+       // [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
