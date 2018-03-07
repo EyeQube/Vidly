@@ -169,7 +169,13 @@ namespace Vidly.Controllers
                     var roleManager = new RoleManager<IdentityRole>(roleStore);
                     await roleManager.CreateAsync(new IdentityRole("CanManageMovies"));
                     await UserManager.AddToRoleAsync(user.Id, "CanManageMovies"); */
-                    
+
+                    var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    await roleManager.CreateAsync(new IdentityRole("CanOnlyManageCustomers"));
+                    await UserManager.AddToRoleAsync(user.Id, "CanOnlyManageCustomers");
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

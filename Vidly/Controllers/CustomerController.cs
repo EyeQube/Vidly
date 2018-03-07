@@ -7,7 +7,7 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    [Authorize(Roles = RoleName.CanManageMovies)]
+   // [Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
@@ -40,6 +40,7 @@ namespace Vidly.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
@@ -75,15 +76,19 @@ namespace Vidly.Controllers
 
 
         [AllowAnonymous]
-        public ViewResult Index()
+        public ActionResult Index()
         {
             //var customers = _context.Customers.Include(c => c.MembershipType).ToList(); // Eagerloading by adding  " Include(c => c.MembershipType) "  in between.
 
+            if (!User.IsInRole(RoleName.CanManageMovies))
+                return RedirectToAction("New", "Customer");
+
             //return View(customers);
+
             return View();
         }
 
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
@@ -93,6 +98,7 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -109,7 +115,7 @@ namespace Vidly.Controllers
                 MembershipTypes = _context.MembershipTypes.ToList()
         };
 
-            return View("CustomerForm", viewModel);
+            return View("CustomerEdit", viewModel);
         }
 
         

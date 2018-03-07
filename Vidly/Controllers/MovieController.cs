@@ -8,7 +8,7 @@ using System;
 
 namespace Vidly.Controllers 
 {
-    [Authorize(Roles = RoleName.CanManageMovies)]
+    //[Authorize(Roles = RoleName.CanManageMovies)]
     public class MovieController : Controller
     {
 
@@ -27,14 +27,14 @@ namespace Vidly.Controllers
         [AllowAnonymous]
         public ViewResult Index()
         {
-            // var movies = _context.Movies.Include(c => c.Genre).ToList();
+            var movies = _context.Movies.Include(c => c.Genre).ToList();
 
             //return View(movies);
 
             if (User.IsInRole(RoleName.CanManageMovies))
-                return View("List");
+                return View("List", movies);
             
-                return View("ReadOnlyList");
+                return View("ReadOnlyList", movies);
         }
 
         [AllowAnonymous]
@@ -48,10 +48,19 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
-
+        [AllowAnonymous]
         public ActionResult Edit(int id)
         {
+            if (!User.IsInRole(RoleName.CanManageMovies))
+            {
+                var _movie = _context.Movies.SingleOrDefault(c => c.Id == id); //_context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
 
+                if (_movie == null)
+                    return HttpNotFound();
+
+                return View("Details", _movie);
+            }
+                
             var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
 
             if (movie == null)
@@ -79,7 +88,7 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
-       // [Authorize(Roles = RoleName.CanManageMovies)]
+       [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -98,6 +107,7 @@ namespace Vidly.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)  
         {
 

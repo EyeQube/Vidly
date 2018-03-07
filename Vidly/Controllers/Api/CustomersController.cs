@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers.Api
 {
-    [Authorize(Roles = RoleName.CanManageMovies)]
+    //[Authorize(Roles = RoleName.CanManageMovies)]
     public class CustomersController : ApiController
     {
 
@@ -23,6 +23,7 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetCustomers()
         {
             var customerDtos = _context.Customers
@@ -35,6 +36,7 @@ namespace Vidly.Controllers.Api
 
 
         // Get /api/customers/1
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetCustomer(int id)    
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
@@ -66,6 +68,7 @@ namespace Vidly.Controllers.Api
 
         // PUT /api/customers/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void UpdateCustomer(int id, CustomerDto customerDto)
         {   
             if (!ModelState.IsValid)
@@ -85,6 +88,7 @@ namespace Vidly.Controllers.Api
 
         // DELETE /api/customers/1
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public void DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
