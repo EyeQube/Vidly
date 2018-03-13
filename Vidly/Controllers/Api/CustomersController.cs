@@ -23,7 +23,7 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetCustomers()
         {
             var customerDtos = _context.Customers
