@@ -28,6 +28,7 @@ namespace Vidly.Controllers.Api
                 {
                     Customer = customer,
                     Movie = movie,
+                    movie.NumberAvailable -= 1,
                     DateRented = DateTime.Now
                 };
 
