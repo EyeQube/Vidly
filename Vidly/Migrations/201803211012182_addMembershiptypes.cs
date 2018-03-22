@@ -18,3 +18,4 @@ namespace Vidly.Migrations
         }
     }
 }
+ 

@@ -236,37 +236,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802271633207_initmodel.cs" />
-    <Compile Include="Migrations\201802271633207_initmodel.Designer.cs">
-      <DependentUpon>201802271633207_initmodel.cs</DependentUpon>
+    <Compile Include="Migrations\201803201327019_SeedUsers.cs" />
+    <Compile Include="Migrations\201803201327019_SeedUsers.Designer.cs">
+      <DependentUpon>201803201327019_SeedUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802271633481_addMembershiptypes.cs" />
-    <Compile Include="Migrations\201802271633481_addMembershiptypes.Designer.cs">
-      <DependentUpon>201802271633481_addMembershiptypes.cs</DependentUpon>
+    <Compile Include="Migrations\201803211009177_addGenres.cs" />
+    <Compile Include="Migrations\201803211009177_addGenres.Designer.cs">
+      <DependentUpon>201803211009177_addGenres.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802271635343_addGenres.cs" />
-    <Compile Include="Migrations\201802271635343_addGenres.Designer.cs">
-      <DependentUpon>201802271635343_addGenres.cs</DependentUpon>
+    <Compile Include="Migrations\201803211012182_addMembershiptypes.cs" />
+    <Compile Include="Migrations\201803211012182_addMembershiptypes.Designer.cs">
+      <DependentUpon>201803211012182_addMembershiptypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803051434441_AddDrivingLicenseToApplicationUser.cs" />
-    <Compile Include="Migrations\201803051434441_AddDrivingLicenseToApplicationUser.Designer.cs">
-      <DependentUpon>201803051434441_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    <Compile Include="Migrations\201803211251001_initModel.cs" />
+    <Compile Include="Migrations\201803211251001_initModel.Designer.cs">
+      <DependentUpon>201803211251001_initModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803061509344_AddPhoneNumberToApplicationUser.cs" />
-    <Compile Include="Migrations\201803061509344_AddPhoneNumberToApplicationUser.Designer.cs">
-      <DependentUpon>201803061509344_AddPhoneNumberToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803071649456_SeedUsers.cs" />
-    <Compile Include="Migrations\201803071649456_SeedUsers.Designer.cs">
-      <DependentUpon>201803071649456_SeedUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803121259542_AddRental.cs" />
-    <Compile Include="Migrations\201803121259542_AddRental.Designer.cs">
-      <DependentUpon>201803121259542_AddRental.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803121541194_AddNumberAvailableToMovies.cs" />
-    <Compile Include="Migrations\201803121541194_AddNumberAvailableToMovies.Designer.cs">
-      <DependentUpon>201803121541194_AddNumberAvailableToMovies.cs</DependentUpon>
+    <Compile Include="Migrations\201803211255107_AddNumberAvailableToMovie.cs" />
+    <Compile Include="Migrations\201803211255107_AddNumberAvailableToMovie.Designer.cs">
+      <DependentUpon>201803211255107_AddNumberAvailableToMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -277,8 +265,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
-    <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -557,29 +545,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802271633207_initmodel.resx">
-      <DependentUpon>201802271633207_initmodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803201327019_SeedUsers.resx">
+      <DependentUpon>201803201327019_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802271633481_addMembershiptypes.resx">
-      <DependentUpon>201802271633481_addMembershiptypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803211009177_addGenres.resx">
+      <DependentUpon>201803211009177_addGenres.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802271635343_addGenres.resx">
-      <DependentUpon>201802271635343_addGenres.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803211012182_addMembershiptypes.resx">
+      <DependentUpon>201803211012182_addMembershiptypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803051434441_AddDrivingLicenseToApplicationUser.resx">
-      <DependentUpon>201803051434441_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803211251001_initModel.resx">
+      <DependentUpon>201803211251001_initModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803061509344_AddPhoneNumberToApplicationUser.resx">
-      <DependentUpon>201803061509344_AddPhoneNumberToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803071649456_SeedUsers.resx">
-      <DependentUpon>201803071649456_SeedUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803121259542_AddRental.resx">
-      <DependentUpon>201803121259542_AddRental.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803121541194_AddNumberAvailableToMovies.resx">
-      <DependentUpon>201803121541194_AddNumberAvailableToMovies.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803211255107_AddNumberAvailableToMovie.resx">
+      <DependentUpon>201803211255107_AddNumberAvailableToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

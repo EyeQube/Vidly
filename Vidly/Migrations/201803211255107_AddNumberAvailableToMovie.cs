@@ -3,7 +3,7 @@ namespace Vidly.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddNumberAvailableToMovies : DbMigration
+    public partial class AddNumberAvailableToMovie : DbMigration
     {
         public override void Up()
         {

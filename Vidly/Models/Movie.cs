@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Vidly.Models  
+namespace Vidly.Models
 {
     public class Movie
     {
@@ -14,7 +14,8 @@ namespace Vidly.Models
 
         public Movie()
         {
-            DateAdded = DateTime.Now;
+            DateAdded = DateTime.Now;     
+            
         }
 
         public int Id { get; set; }
@@ -24,7 +25,7 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
-        
+
         [Display(Name = "Genre")]
         [Required]
         public byte GenreId { get; set; }
@@ -37,14 +38,13 @@ namespace Vidly.Models
         public DateTime ReleaseDate { get; set; }
 
 
-        [Required]
-        [Range(1,20)]
-        [Display(Name = "Add/update numbers in stock")]
+       // [Required]
+        
+        [Display(Name = "NumberinStock")]
+        [Range(1, 20)]
         public int NumberInStock { get; set; }
 
-        [Range(0, 20)]
-        [Display(Name = "Number available in stock")]
-        public int NumberAvailable { get; set; }    
+        public int NumberAvailable { get; set; }
 
-    }   
+    }
 }

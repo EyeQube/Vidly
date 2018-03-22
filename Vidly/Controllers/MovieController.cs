@@ -126,6 +126,7 @@ namespace Vidly.Controllers
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
+               // movie.NumberAvailable = movie.NumberInStock;
                 _context.Movies.Add(movie);
             }
             else
@@ -137,6 +138,7 @@ namespace Vidly.Controllers
                 newMovie.NumberInStock = movie.NumberInStock;
                 DateTime Time = DateTime.Now;
                 newMovie.DateAdded = Time;
+                //newMovie.NumberAvailable = movie.NumberInStock;
             }
 
             _context.SaveChanges();
